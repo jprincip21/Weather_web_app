@@ -20,7 +20,12 @@ if place:
     print(filtered_data)
     if filtered_data is None:
         st.subheader("Cannot Fetch Data")
+
+    elif filtered_data == 404:
+        st.subheader("City Not Found")
+
     else:
+
         if option == "Temperature":
             temperatures = [dictionary["main"]["temp"] for dictionary in filtered_data]
             dates = [dictionary["dt_txt"] for dictionary in filtered_data]

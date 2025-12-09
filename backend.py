@@ -19,6 +19,8 @@ def get_data(place, forecast_days=None):
         filtered_data = data["list"]
         return filtered_data
 
+    if response.status_code == 404:
+        return 404
 
     return None
 
